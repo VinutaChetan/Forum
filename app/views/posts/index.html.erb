@@ -1,0 +1,8 @@
+<h1> Welcome To Our Forum</h1>
+
+<% @posts.each do |post|%>
+	<h2><b><%=link_to post.title,post_path(post.id) %></b><br/></li></h2>
+	<li><b>Published at  <%=time_ago_in_words(post.created_at) %> ago</b></li></ul>
+<% end %>	
+<br/>
+<%=link_to "New Post",new_post_path %>
